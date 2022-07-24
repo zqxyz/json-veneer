@@ -1,7 +1,12 @@
 import React from 'react'
 import './JsonInput.css'
 
-const JsonInput = ({ jsonInput, handleInputChange }) => {
+type Props = {
+  jsonInput: string,
+  handleInputChange: React.ChangeEventHandler
+}
+
+const JsonInput: React.FC<Props> = ({ jsonInput, handleInputChange }) => {
 
   return (
     <div id="json-input-container">
@@ -13,8 +18,8 @@ const JsonInput = ({ jsonInput, handleInputChange }) => {
       <textarea
         name="json-input"
         id="json-input-textarea"
-        cols="70"
-        rows="30"
+        cols={70}
+        rows={30}
         placeholder={`{"JSON": "Goes here"}`}
         value={jsonInput}
         onChange={(e) => handleInputChange(e)}

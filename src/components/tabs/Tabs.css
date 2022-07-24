@@ -28,31 +28,32 @@
 
 .tab-handle-inactive:hover {
     cursor: pointer;
+    color: #a7aa7a;
 }
 
 .tab-body-active {
     position:absolute;
-    top: calc(36px + 7.5rem);
+    top: calc(31px + 8.5rem);
     left: calc(5px + 1rem);
-    transform: translateX(0);
     transition: all 300ms ease;
+}
+
+.tab-handle-active:hover {
+    cursor: default;
 }
 
 .tab-body-inactive {
     position:absolute;
-    opacity: 0;
-    transform: translateX(-100vw);
-    z-index: -1;
+    display: none;
     transition: all 500ms ease;
 }
 
-/* .tab-body-inactive:nth-child(2) {
-    position:absolute;
-    transform: translateX(-100vw);
-    transition: all 100ms ease;
-} */
-
-.tab-handle-active:hover+.tab-body {
-    background-color: blue;
-    border: 20px solid blue;
+.tab-body-active[data-highlight=true] {
+    background-color: #2e312d;
+    transition: all 300ms ease;
 }
+
+.tab-body-active[data-highlight=false] {
+    transition: all 300ms ease;
+}
+
