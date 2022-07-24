@@ -5,8 +5,44 @@ type Props = {
   userObject: { [name: string]: any },
   setUserObject: React.Dispatch<React.SetStateAction<object>>,
   setJsonInput: React.Dispatch<React.SetStateAction<string>>
-  
 }
+
+/**
+ * TODO:
+ *    - All key/value pairs need to be a component
+ *      - click on key to edit key, click away => cancels edit
+ *          implication: one editable at a time
+ *          - cancel button/esc reverts to a stored value, click away
+ *            or enter button saves
+ *    - All objects needs to be a component that contains
+ *        sets of keyvalue components
+ *    - boolean is a radio button pair: true/false (stylized as buttons)
+ *    - number field rejects alpha chars [D/'.'] only
+ *    - objects can be hovered or clicked for preview
+ *        - can be duplicated (wholly or by keys only)
+ *        - can be expanded in current view or moved into own view
+ * 
+ *   MAYBE:
+ *      - add node to top level object something like "jsonVeneerValidatorRules"
+ *      - stores validation rules for json structure:
+ *        {
+ *          "jsonVeneerValidatorRules": {
+ *            "name": {
+ *              "type": ["string"],
+ *              "required": true,
+ *              "children": null
+ *            }
+ *            "type": [
+ *              "enum": [
+ *                "CUSTOMER",
+ *                "EMPLOYEE"
+ *              ],
+ *            ]
+ *            "required": true,
+ *            "children": null
+ *          }
+ *        }
+ */ 
 
 const Editor: React.FC<Props> = ({ userObject, setUserObject, setJsonInput }) => {
 
